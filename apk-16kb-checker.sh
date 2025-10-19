@@ -81,14 +81,13 @@ while read -r sofile; do
   done
 done < <(find "$TMP_DIR/lib" \( -path "*/arm64-v8a/*.so" -o -path "*/x86_64/*.so" \))
 
+# cleanup
+rm -rf "$TMP_DIR"
+
 # Summary
 if [ "$COUNT" -gt 0 ]; then
   echo -e "${RED}$COUNT .so files need to be fixed (arm64-v8a & x86_64 only)${RESET}"
-  rm -rf "$TMP_DIR"
-  exit 1  # <-- This makes it CI/CD-friendly
+  exit 1 
 else
   echo -e "${GREEN}✅ All .so files are using 16KB or 64KB page alignment.${RESET}"
 fi
-
-# cleanup
-rm -rf "$TMP_DIR"
