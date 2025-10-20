@@ -19,7 +19,7 @@ This tool helps developers **scan APKs** to find `.so` files that **still use 4 
 2.  Uses `llvm-readelf` (from the Android NDK) to inspect the ELF headers.
 3.  Detects whether the **LOAD alignment** is `0x1000` (❌ 4 KB), `0x4000` (✅ 16 KB), or `0x10000` (✅ 64 KB | 4x16KB).
 
-Whatch it in action here https://www.youtube.com/watch?v=_5GbJ6CFcWk
+Watch it in action here https://www.youtube.com/watch?v=_5GbJ6CFcWk
 
 ---
 
